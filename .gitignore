@@ -1,0 +1,5 @@
+*.zip
+*.pth
+UDA/pytorch1.0/DSAN/dataset/
+.idea/
+
