@@ -19,8 +19,6 @@ def load_data(root_path, src, tar, batch_size):
 
 
 def train_epoch(epoch, model, dataloaders, optimizer):
-    
-
     model.train()
     source_loader, target_train_loader, _ = dataloaders
     iter_source = iter(source_loader)
@@ -46,7 +44,8 @@ def train_epoch(epoch, model, dataloaders, optimizer):
         optimizer.step()
 
         if i % args.log_interval == 0:
-            print(f'Epoch: [{epoch:2d}], Loss: {loss.item():.4f}, cls_Loss: {loss_cls.item():.4f}, loss_lmmd: {loss_lmmd.item():.4f}')
+            print(
+                f'Epoch: [{epoch:2d}], Loss: {loss.item():.4f}, cls_Loss: {loss_cls.item():.4f}, loss_lmmd: {loss_lmmd.item():.4f}')
 
 
 def test(model, dataloader):
@@ -124,7 +123,7 @@ if __name__ == '__main__':
     dataloaders = load_data(args.root_path, args.src,
                             args.tar, args.batch_size)
     model = DSAN(num_classes=args.nclass).cuda()
-    
+
     correct = 0
     stop = 0
 

@@ -1,0 +1,126 @@
+/home/hangyuan/anaconda3/envs/cdtrans/bin/python /home/hangyuan/nx/code/VisDA/deep-transfer-learning/UDA/pytorch1.0/DSAN/main.py --root_path ./dataset/ --nepoch 20 --early_stop 3
+{'root_path': './dataset/', 'src': 'amazon', 'tar': 'webcam', 'nclass': 31, 'batch_size': 32, 'nepoch': 20, 'lr': [0.001, 0.01, 0.01], 'early_stop': 3, 'seed': 2021, 'weight': 0.5, 'momentum': 0.9, 'decay': 0.0005, 'bottleneck': True, 'log_interval': 10, 'gpu': '0'}
+Epoch: [ 1], Loss: 3.5010, cls_Loss: 3.2406, loss_lmmd: 2.1269
+Epoch: [ 1], Loss: 2.9016, cls_Loss: 2.5982, loss_lmmd: 2.4775
+Epoch: [ 1], Loss: 2.0351, cls_Loss: 1.7026, loss_lmmd: 2.7152
+Epoch: [ 1], Loss: 2.0197, cls_Loss: 1.7802, loss_lmmd: 1.9554
+Epoch: [ 1], Loss: 1.6121, cls_Loss: 1.3905, loss_lmmd: 1.8098
+Epoch: [ 1], Loss: 1.7463, cls_Loss: 1.4811, loss_lmmd: 2.1662
+Epoch: [ 1], Loss: 1.5238, cls_Loss: 1.2515, loss_lmmd: 2.2236
+Epoch: [ 1], Loss: 0.9863, cls_Loss: 0.7212, loss_lmmd: 2.1651
+Average loss: 0.9389, Accuracy: 580/795 (72.96%)
+amazon-webcam: max correct: 580 max accuracy: 72.96%
+
+Epoch: [ 2], Loss: 1.5310, cls_Loss: 0.9019, loss_lmmd: 2.7224
+Epoch: [ 2], Loss: 1.2024, cls_Loss: 0.7180, loss_lmmd: 2.0963
+Epoch: [ 2], Loss: 1.0900, cls_Loss: 0.6244, loss_lmmd: 2.0151
+Epoch: [ 2], Loss: 1.2244, cls_Loss: 0.6895, loss_lmmd: 2.3149
+Epoch: [ 2], Loss: 1.0068, cls_Loss: 0.5500, loss_lmmd: 1.9770
+Epoch: [ 2], Loss: 0.9036, cls_Loss: 0.3877, loss_lmmd: 2.2326
+Epoch: [ 2], Loss: 1.2710, cls_Loss: 0.8309, loss_lmmd: 1.9048
+Epoch: [ 2], Loss: 1.0645, cls_Loss: 0.5808, loss_lmmd: 2.0931
+Average loss: 0.6949, Accuracy: 636/795 (80.00%)
+amazon-webcam: max correct: 636 max accuracy: 80.00%
+
+Epoch: [ 3], Loss: 0.9009, cls_Loss: 0.3468, loss_lmmd: 1.7451
+Epoch: [ 3], Loss: 0.8067, cls_Loss: 0.2319, loss_lmmd: 1.8098
+Epoch: [ 3], Loss: 1.0164, cls_Loss: 0.4046, loss_lmmd: 1.9266
+Epoch: [ 3], Loss: 1.0224, cls_Loss: 0.4612, loss_lmmd: 1.7672
+Epoch: [ 3], Loss: 1.0892, cls_Loss: 0.5673, loss_lmmd: 1.6436
+Epoch: [ 3], Loss: 1.2451, cls_Loss: 0.5606, loss_lmmd: 2.1554
+Epoch: [ 3], Loss: 1.1178, cls_Loss: 0.5178, loss_lmmd: 1.8894
+Epoch: [ 3], Loss: 0.9170, cls_Loss: 0.2756, loss_lmmd: 2.0197
+Average loss: 0.5812, Accuracy: 673/795 (84.65%)
+amazon-webcam: max correct: 673 max accuracy: 84.65%
+
+Epoch: [ 4], Loss: 1.4026, cls_Loss: 0.4674, loss_lmmd: 2.4561
+Epoch: [ 4], Loss: 0.9794, cls_Loss: 0.2964, loss_lmmd: 1.7936
+Epoch: [ 4], Loss: 1.2319, cls_Loss: 0.5569, loss_lmmd: 1.7726
+Epoch: [ 4], Loss: 0.9481, cls_Loss: 0.2593, loss_lmmd: 1.8089
+Epoch: [ 4], Loss: 0.8253, cls_Loss: 0.1876, loss_lmmd: 1.6747
+Epoch: [ 4], Loss: 1.4238, cls_Loss: 0.7381, loss_lmmd: 1.8008
+Epoch: [ 4], Loss: 1.0751, cls_Loss: 0.4906, loss_lmmd: 1.5351
+Epoch: [ 4], Loss: 0.9418, cls_Loss: 0.3218, loss_lmmd: 1.6281
+Average loss: 0.5184, Accuracy: 702/795 (88.30%)
+amazon-webcam: max correct: 702 max accuracy: 88.30%
+
+Epoch: [ 5], Loss: 1.2700, cls_Loss: 0.4035, loss_lmmd: 2.0431
+Epoch: [ 5], Loss: 0.9344, cls_Loss: 0.3027, loss_lmmd: 1.4892
+Epoch: [ 5], Loss: 0.9525, cls_Loss: 0.3309, loss_lmmd: 1.4655
+Epoch: [ 5], Loss: 0.9822, cls_Loss: 0.3899, loss_lmmd: 1.3965
+Epoch: [ 5], Loss: 1.2590, cls_Loss: 0.4667, loss_lmmd: 1.8680
+Epoch: [ 5], Loss: 1.0262, cls_Loss: 0.2532, loss_lmmd: 1.8225
+Epoch: [ 5], Loss: 1.0798, cls_Loss: 0.3223, loss_lmmd: 1.7859
+Epoch: [ 5], Loss: 1.2137, cls_Loss: 0.5044, loss_lmmd: 1.6723
+Average loss: 0.5124, Accuracy: 707/795 (88.93%)
+amazon-webcam: max correct: 707 max accuracy: 88.93%
+
+Epoch: [ 6], Loss: 1.2040, cls_Loss: 0.3753, loss_lmmd: 1.8311
+Epoch: [ 6], Loss: 0.9026, cls_Loss: 0.2346, loss_lmmd: 1.4760
+Epoch: [ 6], Loss: 1.1214, cls_Loss: 0.2692, loss_lmmd: 1.8832
+Epoch: [ 6], Loss: 1.0646, cls_Loss: 0.3152, loss_lmmd: 1.6560
+Epoch: [ 6], Loss: 1.0517, cls_Loss: 0.4180, loss_lmmd: 1.4001
+Epoch: [ 6], Loss: 1.0820, cls_Loss: 0.3187, loss_lmmd: 1.6867
+Epoch: [ 6], Loss: 1.0856, cls_Loss: 0.3805, loss_lmmd: 1.5580
+Epoch: [ 6], Loss: 1.1580, cls_Loss: 0.3965, loss_lmmd: 1.6825
+Average loss: 0.4519, Accuracy: 718/795 (90.31%)
+amazon-webcam: max correct: 718 max accuracy: 90.31%
+
+Epoch: [ 7], Loss: 0.9267, cls_Loss: 0.2003, loss_lmmd: 1.5433
+Epoch: [ 7], Loss: 0.8451, cls_Loss: 0.1798, loss_lmmd: 1.4134
+Epoch: [ 7], Loss: 0.9605, cls_Loss: 0.2186, loss_lmmd: 1.5764
+Epoch: [ 7], Loss: 1.1796, cls_Loss: 0.3732, loss_lmmd: 1.7132
+Epoch: [ 7], Loss: 1.1254, cls_Loss: 0.3505, loss_lmmd: 1.6463
+Epoch: [ 7], Loss: 1.2398, cls_Loss: 0.4507, loss_lmmd: 1.6765
+Epoch: [ 7], Loss: 0.9588, cls_Loss: 0.3466, loss_lmmd: 1.3007
+Epoch: [ 7], Loss: 1.2424, cls_Loss: 0.2942, loss_lmmd: 2.0146
+Average loss: 0.4315, Accuracy: 714/795 (89.81%)
+amazon-webcam: max correct: 718 max accuracy: 90.31%
+
+Epoch: [ 8], Loss: 0.9631, cls_Loss: 0.3789, loss_lmmd: 1.2120
+Epoch: [ 8], Loss: 1.1664, cls_Loss: 0.4047, loss_lmmd: 1.5802
+Epoch: [ 8], Loss: 1.3952, cls_Loss: 0.5074, loss_lmmd: 1.8419
+Epoch: [ 8], Loss: 1.0490, cls_Loss: 0.3137, loss_lmmd: 1.5255
+Epoch: [ 8], Loss: 1.1171, cls_Loss: 0.2357, loss_lmmd: 1.8286
+Epoch: [ 8], Loss: 1.0921, cls_Loss: 0.4737, loss_lmmd: 1.2829
+Epoch: [ 8], Loss: 1.2286, cls_Loss: 0.4022, loss_lmmd: 1.7143
+Epoch: [ 8], Loss: 1.1654, cls_Loss: 0.2789, loss_lmmd: 1.8391
+Average loss: 0.4189, Accuracy: 730/795 (91.82%)
+amazon-webcam: max correct: 730 max accuracy: 91.82%
+
+Epoch: [ 9], Loss: 1.1951, cls_Loss: 0.3997, loss_lmmd: 1.6266
+Epoch: [ 9], Loss: 1.3317, cls_Loss: 0.5513, loss_lmmd: 1.5958
+Epoch: [ 9], Loss: 1.3724, cls_Loss: 0.4583, loss_lmmd: 1.8694
+Epoch: [ 9], Loss: 1.1984, cls_Loss: 0.2669, loss_lmmd: 1.9049
+Epoch: [ 9], Loss: 0.9154, cls_Loss: 0.1860, loss_lmmd: 1.4914
+Epoch: [ 9], Loss: 1.1773, cls_Loss: 0.4533, loss_lmmd: 1.4805
+Epoch: [ 9], Loss: 0.9596, cls_Loss: 0.2895, loss_lmmd: 1.3704
+Epoch: [ 9], Loss: 0.9668, cls_Loss: 0.3299, loss_lmmd: 1.3024
+Average loss: 0.4171, Accuracy: 724/795 (91.07%)
+amazon-webcam: max correct: 730 max accuracy: 91.82%
+
+Epoch: [10], Loss: 1.1726, cls_Loss: 0.4234, loss_lmmd: 1.5188
+Epoch: [10], Loss: 1.1526, cls_Loss: 0.3487, loss_lmmd: 1.6294
+Epoch: [10], Loss: 0.9829, cls_Loss: 0.2437, loss_lmmd: 1.4984
+Epoch: [10], Loss: 1.1350, cls_Loss: 0.4070, loss_lmmd: 1.4757
+Epoch: [10], Loss: 0.9063, cls_Loss: 0.3281, loss_lmmd: 1.1721
+Epoch: [10], Loss: 0.9304, cls_Loss: 0.3158, loss_lmmd: 1.2459
+Epoch: [10], Loss: 1.1785, cls_Loss: 0.3813, loss_lmmd: 1.6162
+Epoch: [10], Loss: 0.9128, cls_Loss: 0.2904, loss_lmmd: 1.2616
+Average loss: 0.3961, Accuracy: 727/795 (91.45%)
+amazon-webcam: max correct: 730 max accuracy: 91.82%
+
+Epoch: [11], Loss: 1.1964, cls_Loss: 0.3138, loss_lmmd: 1.7796
+Epoch: [11], Loss: 0.9615, cls_Loss: 0.3080, loss_lmmd: 1.3177
+Epoch: [11], Loss: 1.0367, cls_Loss: 0.3336, loss_lmmd: 1.4177
+Epoch: [11], Loss: 1.2842, cls_Loss: 0.4940, loss_lmmd: 1.5933
+Epoch: [11], Loss: 1.3031, cls_Loss: 0.4933, loss_lmmd: 1.6329
+Epoch: [11], Loss: 0.8945, cls_Loss: 0.2321, loss_lmmd: 1.3356
+Epoch: [11], Loss: 1.1278, cls_Loss: 0.2504, loss_lmmd: 1.7691
+Epoch: [11], Loss: 0.9984, cls_Loss: 0.3244, loss_lmmd: 1.3591
+Average loss: 0.4048, Accuracy: 726/795 (91.32%)
+amazon-webcam: max correct: 730 max accuracy: 91.82%
+
+Final test acc: 91.82%
+
+进程已结束,退出代码0
