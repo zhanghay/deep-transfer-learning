@@ -3,6 +3,7 @@ import torch.nn as nn
 import ResNet
 import lmmd
 
+
 class DSAN(nn.Module):
 
     def __init__(self, num_classes=31, bottle_neck=True):
@@ -15,7 +16,6 @@ class DSAN(nn.Module):
             self.cls_fc = nn.Linear(256, num_classes)
         else:
             self.cls_fc = nn.Linear(2048, num_classes)
-
 
     def forward(self, source, target, s_label):
         source = self.feature_layers(source)
