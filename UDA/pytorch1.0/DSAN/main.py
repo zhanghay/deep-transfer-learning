@@ -4,7 +4,7 @@ import math
 import argparse
 import numpy as np
 import os
-
+from visdom import Visdom
 from DSAN import DSAN
 import data_loader
 
@@ -24,6 +24,7 @@ def train_epoch(epoch, model, dataloaders, optimizer):
     iter_source = iter(source_loader)
     iter_target = iter(target_train_loader)
     num_iter = len(source_loader)
+    loss_, loss_cls_, loss_lmmd_ = 0, 0, 0
     for i in range(1, num_iter):
         data_source, label_source = iter_source.next()
         data_target, _ = iter_target.next()
@@ -46,8 +47,10 @@ def train_epoch(epoch, model, dataloaders, optimizer):
         if i % args.log_interval == 0:
             print(
                 f'Epoch: [{epoch:2d}], Loss: {loss.item():.4f}, cls_Loss: {loss_cls.item():.4f}, loss_lmmd: {loss_lmmd.item():.4f}')
-
-
+        loss_ = loss_ + loss.item()
+        loss_cls_ = loss_cls_ + loss_cls.item()
+        loss_lmmd_ = loss_lmmd_ + loss_lmmd.item()
+    return loss_/num_iter, loss_cls_/num_iter, loss_lmmd_/num_iter
 def test(model, dataloader):
     model.eval()
     test_loss = 0
@@ -139,20 +142,35 @@ if __name__ == '__main__':
             {'params': model.cls_fc.parameters(), 'lr': args.lr[1]},
         ], lr=args.lr[0], momentum=args.momentum, weight_decay=args.decay)
 
+    wind = Visdom()
+    wind.line([0.],
+              [0.],
+              win='acc',
+              opts=dict(title='val_acc')
+              )
+    wind.line([[0., 0., 0.]],
+              [0],
+              win='loss',
+              opts=dict(title='epoch_loss', legend=['loss', 'loss_cls', 'loss_lmmd'])
+              )
     for epoch in range(1, args.nepoch + 1):
         stop += 1
         for index, param_group in enumerate(optimizer.param_groups):
             param_group['lr'] = args.lr[index] / math.pow((1 + 10 * (epoch - 1) / args.nepoch), 0.75)
 
-        train_epoch(epoch, model, dataloaders, optimizer)
+        loss, loss_cls, loss_lmmd = train_epoch(epoch, model, dataloaders, optimizer)
         t_correct = test(model, dataloaders[-1])
         if t_correct > correct:
             correct = t_correct
             stop = 0
-            torch.save(model, 'model.pkl')
+            torch.save(model, 'model_visdom_test.pkl')
         print(
             f'{args.src}-{args.tar}: max correct: {correct} max accuracy: {100. * correct / len(dataloaders[-1].dataset):.2f}%\n')
-
+        wind.line([correct / len(dataloaders[-1].dataset)], [epoch], win='acc', update='append')
+        wind.line([[loss, loss_cls, loss_lmmd]],
+                  [epoch],
+                  win='loss', update='append'
+                  )
         if stop >= args.early_stop:
             print(
                 f'Final test acc: {100. * correct / len(dataloaders[-1].dataset):.2f}%')

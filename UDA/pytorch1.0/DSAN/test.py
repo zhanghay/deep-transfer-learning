@@ -5,23 +5,24 @@ from torch.utils.data import DataLoader
 from DSAN import DSAN
 from data_loader import load_testing_other
 from tqdm import tqdm
+
 nclass = 13
-root_path = './dataset/visda/'
-dir = 'test'
+root_path = './dataset/'
+dir = 'visda_test'
 batch_size = 2
 kwargs = {'num_workers': 1, 'pin_memory': True}
 
 # 创建DSAN模型并移动到CUDA设备
-#model = DSAN(num_classes=nclass).cuda()
+# model = DSAN(num_classes=nclass).cuda()
 
 # 加载模型权重
-#model.load_state_dict(torch.load('model_visda.pkl'))
+# model.load_state_dict(torch.load('model_visda.pkl'))
 model = torch.load('model_visda.pkl')
 # 定义数据转换和加载测试集
-#transform = transforms.Compose([
+# transform = transforms.Compose([
 #    transforms.ToTensor(),
 #    # 其他必要的转换
-#])
+# ])
 
 # test_dataset = datasets.ImageFolder('test_data_folder', transform=transform)
 # test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
