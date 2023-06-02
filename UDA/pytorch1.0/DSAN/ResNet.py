@@ -118,14 +118,14 @@ class ResNet(nn.Module):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
 
-    def _make_layer(self, block, planes, blocks, stride=1):
+    def _make_layer(self, block, planes, blocks, stride=1):  # https://zhuanlan.zhihu.com/p/62525824
         downsample = None
-        if stride != 1 or self.inplanes != planes * block.expansion:
+        if stride != 1 or self.inplanes != planes * block.expansion:  # stride != 1
             downsample = nn.Sequential(
                 nn.Conv2d(self.inplanes, planes * block.expansion,
                           kernel_size=1, stride=stride, bias=False),
                 nn.BatchNorm2d(planes * block.expansion),
-            )
+            )  # down sample Cases. To meet the dism
 
         layers = []
         layers.append(block(self.inplanes, planes, stride, downsample))
@@ -155,9 +155,20 @@ def resnet50(pretrained=False, **kwargs):
     """Constructs a ResNet-50 model.
 
     Args:
-        pretrained (bool): If True, returns a model pre-trained on ImageNet
+        pretrained (bool): If True, returns a model pretrained on ImageNet
     """
-    model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)
+    model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)   # 3 4 6 3 layers of Block
     if pretrained:
         model.load_state_dict(model_zoo.load_url(model_urls['resnet50']))
+    return model
+
+def resnet101(pretrained=False, **kwargs):  # https://zhuanlan.zhihu.com/p/225597229
+    """Constructs a ResNet-50 model.
+
+    Args:
+        pretrained (bool): If True, returns a model pretrained on ImageNet
+    """
+    model = ResNet(Bottleneck, [3, 4, 23, 3], **kwargs)   # 3 4 6 3 layers of Block
+    if pretrained:
+        model.load_state_dict(model_zoo.load_url(model_urls['resnet101']))
     return model

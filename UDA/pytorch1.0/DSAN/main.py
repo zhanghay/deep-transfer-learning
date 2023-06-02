@@ -163,7 +163,7 @@ if __name__ == '__main__':
         if t_correct > correct:
             correct = t_correct
             stop = 0
-            torch.save(model, 'model_visdom_test.pkl')
+            torch.save(model, 'model_resnet101_test.pkl')
         print(
             f'{args.src}-{args.tar}: max correct: {correct} max accuracy: {100. * correct / len(dataloaders[-1].dataset):.2f}%\n')
         wind.line([correct / len(dataloaders[-1].dataset)], [epoch], win='acc', update='append')
