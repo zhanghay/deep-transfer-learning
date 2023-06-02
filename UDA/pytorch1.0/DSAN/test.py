@@ -6,9 +6,9 @@ from DSAN import DSAN
 from data_loader import load_testing_other
 from tqdm import tqdm
 
-nclass = 13
-root_path = './dataset/'
-dir = 'visda_test'
+nclass = 12
+root_path = '/home/hangyuan/nx/code/Pacs/PACS/'
+dir = 'art_painting'
 batch_size = 2
 kwargs = {'num_workers': 1, 'pin_memory': True}
 
@@ -17,7 +17,7 @@ kwargs = {'num_workers': 1, 'pin_memory': True}
 
 # 加载模型权重
 # model.load_state_dict(torch.load('model_visda.pkl'))
-model = torch.load('model_visda.pkl')
+model = torch.load('model_PACS_c2p.pkl')
 # 定义数据转换和加载测试集
 # transform = transforms.Compose([
 #    transforms.ToTensor(),
