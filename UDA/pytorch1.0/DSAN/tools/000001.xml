@@ -1,0 +1,26 @@
+<annotation>
+	<folder>缺螺母109</folder>
+	<filename>500KV宁华5916线22号塔左相导线线夹挂板螺栓缺螺帽且铝包带滑移.JPG</filename>
+	<path>C:\Users\Roche\Desktop\5\缺螺母109\500KV宁华5916线22号塔左相导线线夹挂板螺栓缺螺帽且铝包带滑移.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5472</width>
+		<height>3078</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MissingNutw</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3271</xmin>
+			<ymin>1796</ymin>
+			<xmax>3340</xmax>
+			<ymax>1857</ymax>
+		</bndbox>
+	</object>
+</annotation>

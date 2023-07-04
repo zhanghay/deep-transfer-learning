@@ -1,7 +1,7 @@
 import os.path
 import xml.etree.ElementTree as ET
 from PIL import Image
-
+from tqdm import tqdm
 
 def get_all_xy(nodes):
     return_list = []
@@ -39,12 +39,12 @@ def operation_file(jpg_path, xml_path):
         zone = image.crop((xy[0][0], xy[0][1], xy[1][0], xy[1][1]))  # Adjust the width and height as needed
         # Save the cropped image
         filename = image_file.split('/')[-1].split('.')[0] + str(i) + '.jpg'
-        zone.save('outputs/' + filename)
+        zone.save('../dataset/nut/have_nut_uva_cut/' + filename)
 
 
-jpgs_path = '/home/hangyuan/nx/code/VisDA/Nut_uva_data/135'
-xmls_path = '/home/hangyuan/nx/code/VisDA/Nut_uva_data/135label'
-for file in os.listdir(jpgs_path):
+jpgs_path = '../dataset/nut/have_nut_uva/img'
+xmls_path = '../dataset/nut/have_nut_uva/label'
+for file in tqdm(os.listdir(jpgs_path)):
     if file.split('.')[-1] == 'jpg':
         if os.path.isfile(os.path.join(xmls_path, file.split('.')[0] + '.xml')):
             operation_file(os.path.join(jpgs_path, file), os.path.join(xmls_path, file.split('.')[0] + '.xml'))
